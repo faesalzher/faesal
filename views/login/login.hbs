@@ -1,0 +1,11 @@
+<h3>{{viewTitle}}</h3>
+
+<form action="/login" method="POST" autocomplete="off">
+    {{!-- <input type="hidden" name="_id" value="{{user._id}}"> --}}
+    <div class="form-group">
+        <label>Username</label>
+        <input type="text" class="form-control" name="userName" placeholder="Username" value="{{user.userName}}">
+        <div class="text-danger">
+            {{user.userNameError}}</div>
+    </div>
+</form>
