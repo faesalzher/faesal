@@ -6,8 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server.js",
-    "start": "next start -p $PORT",
-    "heroku-postbuild": "npm run build"
+    "start": "node server.js",
+    "build": "webpack",
+    "heroku-postbuild": "npm run build && npm install"
   },
   "author": "",
   "license": "ISC",
