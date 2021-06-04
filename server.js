@@ -87,3 +87,10 @@ function generateAccessToken(user) {
     return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '15s' })
 }
 
+if (process.env.NODE_ENV === 'production') {
+    // Exprees will serve up production assets
+    // Express serve up index.html file if it doesn't recognize route
+    app.set('views', path.join(__dirname, '/views/'));
+    app.engine('hbs', exphbs({ extname: 'hbs', defaultLayout: 'mainLayout', layoutsDir: __dirname + '/views/layouts/' }));
+    app.set('view engine', 'hbs');
+}
